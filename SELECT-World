@@ -44,9 +44,9 @@ SELECT name FROM world
 WHERE name LIKE '%o__o%';
 
 -- 10. Show per-capita GDP for the trillion dollar countries to the nearest $1000.
-SELECT name, ROUND(GDP/population, -3) AS gdp_capita
+SELECT name, ROUND(population/1000000, 2) AS pop_mil, ROUND(GDP/1000000000, 2) AS GDP_bil
 FROM world
-WHERE GDP > 1000000000000;
+WHERE continent = 'South America'
 
 -- 11. Show the name and capital where the name and the capital have the same number of characters.
 SELECT name, capital 
